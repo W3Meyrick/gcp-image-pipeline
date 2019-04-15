@@ -163,7 +163,7 @@ pipeline {
                         }
 
                         instances[image['name']] = {
-                            sh "gcloud --project=${image['project']} compute instances create ${image['name']}-build --zone=europe-west1-b --image-project=${image['image_project']} --image-family=${image['image_family']} --tags=${tags} ${service_account} --metadata-from-file=ssh-keys=/var/lib/jenkins/ssh/jenkins-ssh.metadata --quiet"
+                            sh "gcloud --project=${image['project']} compute instances create ${image['name']}-build --zone=europe-west1-b --image-project=${image['image_project']} --image-family=${image['image_family']} --tags=${tags} ${service_account} --metadata-from-file=ssh-keys=/opt/terraform/littleterra.pub --quiet"
                         }
                     }
 
