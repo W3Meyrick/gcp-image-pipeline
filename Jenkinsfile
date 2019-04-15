@@ -191,7 +191,7 @@ pipeline {
                         ).trim()
 
                         instances[image['name']] = {
-                            sh "ansible-playbook -i ${image['private_ip']}, -u root --private-key=/var/lib/jenkins/ssh/jenkins-ssh --ssh-common-args='-o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no' ./${image['name']}/ansible/main.yml"
+                            sh "ansible-playbook -i ${image['private_ip']}, -u jenkinsbuild --private-key=/var/lib/jenkins/ssh/jenkins-ssh --ssh-common-args='-o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no' ./${image['name']}/ansible/main.yml"
                         }
                     }
 
