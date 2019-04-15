@@ -184,7 +184,7 @@ pipeline {
                 script {
 
                     def whoisrunning = sh (
-                        script: "whoami >> workspace/user.txt",
+                        script: "whoami >> user.txt",
                         returnStdout: true
                     )
                     
