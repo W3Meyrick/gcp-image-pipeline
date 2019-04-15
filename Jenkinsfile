@@ -182,12 +182,6 @@ pipeline {
 
             steps {          
                 script {
-
-                    def whoisrunning = sh (
-                        script: "whoami >> user.txt",
-                        returnStdout: true
-                    )
-                    
                     def instances = [:]
 
                     changed_images.each { image ->
