@@ -182,6 +182,7 @@ pipeline {
 
             steps {          
                 script {
+                    
                     def whoisrunning = sh (
                         script: "whoami",
                         returnStdout: true
