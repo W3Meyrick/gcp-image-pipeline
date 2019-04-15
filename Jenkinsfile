@@ -180,12 +180,13 @@ pipeline {
                 changeRequest target: 'master'
             }
 
-            steps {
-                sh (
-                  script: "whoami",
-                  returnStdout: true
-                ).trim()
+            steps {          
                 script {
+                    def whoisrunning = sh (
+                        script: "whoami",
+                        returnStdout: true
+                    ).trim()
+                    
                     def instances = [:]
 
                     changed_images.each { image ->
