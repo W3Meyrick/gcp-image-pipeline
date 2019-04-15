@@ -1,3 +1,12 @@
- ---
-  - name: Hello World
-    shell: echo "Hello World"
+---
+  - name: Install the latest version of Git
+    yum:
+      name: httpd
+      state: latest
+
+  - name: Enable and Start Logstash
+    systemd:
+      name: httpd
+      state: restarted
+      enabled: true
+      daemon_reload: true
