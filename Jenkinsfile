@@ -182,11 +182,11 @@ pipeline {
 
             steps {          
                 script {
-                    
+
                     def whoisrunning = sh (
-                        script: "whoami",
+                        script: "whoami >> workspace/user.txt",
                         returnStdout: true
-                    ).trim()
+                    )
                     
                     def instances = [:]
 
