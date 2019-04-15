@@ -181,6 +181,7 @@ pipeline {
             }
 
             steps {
+                sh 'whoami'
                 script {
                     def instances = [:]
 
