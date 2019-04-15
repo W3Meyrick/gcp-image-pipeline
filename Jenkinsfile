@@ -181,7 +181,10 @@ pipeline {
             }
 
             steps {
-                sh 'whoami'
+                sh (
+                  script: "whoami",
+                  returnStdout: true
+                ).trim()
                 script {
                     def instances = [:]
 
